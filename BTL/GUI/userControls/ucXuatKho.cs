@@ -204,7 +204,7 @@ namespace BTL
                             {
                                 dgvProduct.Rows.Add(new object[]
                                 {
-                                ct.nl.ma, ct.nl.ten, ct.nl.dvt, ct.soluong, ct.nl.gia.ToString("#,##")
+                                    ct.nl.ma, ct.nl.ten, ct.nl.dvt, ct.soluong, ct.nl.gia.ToString("#,##")
                                 });
                             });
                         }
@@ -262,7 +262,7 @@ namespace BTL
             for (int i = dgvProduct.SelectedRows.Count - 1; i >= 0; i--)
             {
                 int index = dgvProduct.SelectedRows[i].Index;
-                dao_ctp.deleteOne(type, phieu.sophieu, Convert.ToInt32(dgvProduct.Rows[index].Cells[0].Value));
+                dao_ctp.deleteOne(type, phieu.sophieu, dgvProduct.Rows[index].Cells[0].Value.ToString());
                 
                 dgvProduct.Rows.RemoveAt(index);
                 phieu.list.RemoveAt(index);
@@ -279,12 +279,6 @@ namespace BTL
         private void btnOpen_Click(object sender, EventArgs e)
         {
             new DSPhieu(null,this).phieu(false);
-        }
-
-        private void txtQuantity_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar)) e.Handled = true;
-            if (e.KeyChar == (char)8) e.Handled = false;
         }
     }
 }

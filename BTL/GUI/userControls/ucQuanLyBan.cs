@@ -50,8 +50,7 @@ namespace BTL
                         {
                             if (hd.ds_mon.Count == 0)
                             {
-                                dao_hd.deleteOne(hd.sohd);
-                                dao_b.updateOne(ban);
+                                dao_hd.cancelBookTable(hd);
                             }
                             else
                             {
@@ -59,14 +58,15 @@ namespace BTL
                             }
                         }
                     }
+                    ban.trangthai = !ban.trangthai;
                     int index = ds_ban.FindIndex(item => item.soban == ban.soban);
-                    if(index != -1)
+                    if (index != -1)
                     {
-                        dgvTable.Rows[index].Cells[1].Value = (ban.trangthai == true) ? "Trống" : "Có Khách";
+                        dgvTable.Rows[index].Cells[1].Value = (ban.trangthai == false) ? "Trống" : "Có Khách";
                         ds_ban[index] = ban;
                     }
                 }
-                dgvTable.ClearSelection();
+                
                 btnDelete.Enabled = false;
             }
         }
@@ -126,6 +126,7 @@ namespace BTL
             cbSearch.SelectedIndex = 2;
             dgvTable.Rows.Clear();
             cbId.Items.Clear();
+            ds_ban.Clear();
             dao_b.getAll().ForEach(ban =>
             {
                 cbId.Items.Add(ban.soban);
@@ -172,6 +173,7 @@ namespace BTL
                 cbId.Items.Clear();
                 if (cbSearch.SelectedIndex == 2)
                 {
+                    ds_ban.Clear();
                     dao_b.getAll().ForEach(ban =>
                     {
                         cbId.Items.Add(ban.soban);
@@ -193,11 +195,10 @@ namespace BTL
                     dao_b.searchByStatus(status).ForEach(ban =>
                     {
                         cbId.Items.Add(ban.soban);
-                        ds_ban.Add(ban);
                         addToDGV(ban);
                     });
                 }
-                dgvTable.ClearSelection();
+                
             }
         }
 
@@ -207,6 +208,7 @@ namespace BTL
             {
                 ban.soban.ToString(), (ban.trangthai==true)?"Trống":"Có Khách"
             });
+            dgvTable.ClearSelection();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -241,6 +243,16 @@ namespace BTL
         private void dgvTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnDelete.Enabled = true;
+            if(action == EDIT)
+            {
+                int index = e.RowIndex;
+                Ban ban = ds_ban.Find(item => "" + item.soban == dgvTable.Rows[index].Cells[0].Value.ToString());
+                if (ban != null)
+                {
+                    setData(ban);
+                    cbId.Text = "" + ban.soban;
+                }
+            }
         }
 
         private void cbId_TextChanged(object sender, EventArgs e)

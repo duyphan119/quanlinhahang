@@ -29,8 +29,6 @@ namespace BTL
         /// </summary>
         private void InitializeComponent()
         {
-            this.dateTimeEnd1 = new MetroFramework.Controls.MetroDateTime();
-            this.dateTimeStart1 = new MetroFramework.Controls.MetroDateTime();
             this.totalGroup = new System.Windows.Forms.Label();
             this.totalFood = new System.Windows.Forms.Label();
             this.totalTable = new System.Windows.Forms.Label();
@@ -41,62 +39,25 @@ namespace BTL
             this.label3 = new System.Windows.Forms.Label();
             this.cbFilter = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dateTimeFilter = new MetroFramework.Controls.MetroDateTime();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dateTimeStart2 = new MetroFramework.Controls.MetroDateTime();
-            this.dateTimeEnd2 = new MetroFramework.Controls.MetroDateTime();
             this.label5 = new System.Windows.Forms.Label();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.btnViewOrder = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox4 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.btnViewFood = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.btnViewRevenue = new Guna.UI2.WinForms.Guna2Button();
-            this.btnViewOrder = new Guna.UI2.WinForms.Guna2Button();
-            this.btnViewFood = new Guna.UI2.WinForms.Guna2Button();
+            this.dateTimeFilter = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeStart1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeEnd1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeStart2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimeEnd2 = new System.Windows.Forms.DateTimePicker();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             this.guna2GroupBox4.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dateTimeEnd1
-            // 
-            this.dateTimeEnd1.CalendarMonthBackground = System.Drawing.Color.OrangeRed;
-            this.dateTimeEnd1.CalendarTitleBackColor = System.Drawing.Color.OrangeRed;
-            this.dateTimeEnd1.CalendarTitleForeColor = System.Drawing.Color.Black;
-            this.dateTimeEnd1.CalendarTrailingForeColor = System.Drawing.Color.Black;
-            this.dateTimeEnd1.DisplayFocus = true;
-            this.dateTimeEnd1.FontSize = MetroFramework.MetroDateTimeSize.Tall;
-            this.dateTimeEnd1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeEnd1.Location = new System.Drawing.Point(263, 54);
-            this.dateTimeEnd1.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimeEnd1.MinimumSize = new System.Drawing.Size(0, 35);
-            this.dateTimeEnd1.Name = "dateTimeEnd1";
-            this.dateTimeEnd1.Size = new System.Drawing.Size(150, 35);
-            this.dateTimeEnd1.TabIndex = 3;
-            this.dateTimeEnd1.UseCustomBackColor = true;
-            this.dateTimeEnd1.UseCustomForeColor = true;
-            this.dateTimeEnd1.UseStyleColors = true;
-            // 
-            // dateTimeStart1
-            // 
-            this.dateTimeStart1.CalendarMonthBackground = System.Drawing.Color.OrangeRed;
-            this.dateTimeStart1.CalendarTitleBackColor = System.Drawing.Color.OrangeRed;
-            this.dateTimeStart1.CalendarTitleForeColor = System.Drawing.Color.Black;
-            this.dateTimeStart1.CalendarTrailingForeColor = System.Drawing.Color.Black;
-            this.dateTimeStart1.DisplayFocus = true;
-            this.dateTimeStart1.FontSize = MetroFramework.MetroDateTimeSize.Tall;
-            this.dateTimeStart1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeStart1.Location = new System.Drawing.Point(53, 57);
-            this.dateTimeStart1.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimeStart1.MinimumSize = new System.Drawing.Size(0, 35);
-            this.dateTimeStart1.Name = "dateTimeStart1";
-            this.dateTimeStart1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTimeStart1.Size = new System.Drawing.Size(150, 35);
-            this.dateTimeStart1.TabIndex = 2;
-            this.dateTimeStart1.UseCustomBackColor = true;
-            this.dateTimeStart1.UseCustomForeColor = true;
-            this.dateTimeStart1.UseStyleColors = true;
             // 
             // totalGroup
             // 
@@ -191,7 +152,7 @@ namespace BTL
             // 
             this.label3.Font = new System.Drawing.Font("Segoe UI", 10.2F);
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(311, 57);
+            this.label3.Location = new System.Drawing.Point(286, 57);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 36);
@@ -218,7 +179,7 @@ namespace BTL
             "Các Quý Trong Năm",
             "3 Năm Gần Đây"});
             this.cbFilter.ItemsAppearance.Parent = this.cbFilter;
-            this.cbFilter.Location = new System.Drawing.Point(453, 57);
+            this.cbFilter.Location = new System.Drawing.Point(428, 57);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.ShadowDecoration.Parent = this.cbFilter;
             this.cbFilter.Size = new System.Drawing.Size(233, 36);
@@ -235,26 +196,6 @@ namespace BTL
             this.label2.TabIndex = 128;
             this.label2.Text = "Chọn Thời Gian";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // dateTimeFilter
-            // 
-            this.dateTimeFilter.CalendarMonthBackground = System.Drawing.Color.OrangeRed;
-            this.dateTimeFilter.CalendarTitleBackColor = System.Drawing.Color.OrangeRed;
-            this.dateTimeFilter.CalendarTitleForeColor = System.Drawing.Color.Black;
-            this.dateTimeFilter.CalendarTrailingForeColor = System.Drawing.Color.Black;
-            this.dateTimeFilter.DisplayFocus = true;
-            this.dateTimeFilter.FontSize = MetroFramework.MetroDateTimeSize.Tall;
-            this.dateTimeFilter.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeFilter.Location = new System.Drawing.Point(153, 57);
-            this.dateTimeFilter.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimeFilter.MinimumSize = new System.Drawing.Size(0, 35);
-            this.dateTimeFilter.Name = "dateTimeFilter";
-            this.dateTimeFilter.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTimeFilter.Size = new System.Drawing.Size(150, 35);
-            this.dateTimeFilter.TabIndex = 125;
-            this.dateTimeFilter.UseCustomBackColor = true;
-            this.dateTimeFilter.UseCustomForeColor = true;
-            this.dateTimeFilter.UseStyleColors = true;
             // 
             // label1
             // 
@@ -276,45 +217,6 @@ namespace BTL
             this.label4.Text = "Từ";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // dateTimeStart2
-            // 
-            this.dateTimeStart2.CalendarMonthBackground = System.Drawing.Color.OrangeRed;
-            this.dateTimeStart2.CalendarTitleBackColor = System.Drawing.Color.OrangeRed;
-            this.dateTimeStart2.CalendarTitleForeColor = System.Drawing.Color.Black;
-            this.dateTimeStart2.CalendarTrailingForeColor = System.Drawing.Color.Black;
-            this.dateTimeStart2.DisplayFocus = true;
-            this.dateTimeStart2.FontSize = MetroFramework.MetroDateTimeSize.Tall;
-            this.dateTimeStart2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeStart2.Location = new System.Drawing.Point(51, 58);
-            this.dateTimeStart2.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimeStart2.MinimumSize = new System.Drawing.Size(0, 35);
-            this.dateTimeStart2.Name = "dateTimeStart2";
-            this.dateTimeStart2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.dateTimeStart2.Size = new System.Drawing.Size(150, 35);
-            this.dateTimeStart2.TabIndex = 125;
-            this.dateTimeStart2.UseCustomBackColor = true;
-            this.dateTimeStart2.UseCustomForeColor = true;
-            this.dateTimeStart2.UseStyleColors = true;
-            // 
-            // dateTimeEnd2
-            // 
-            this.dateTimeEnd2.CalendarMonthBackground = System.Drawing.Color.OrangeRed;
-            this.dateTimeEnd2.CalendarTitleBackColor = System.Drawing.Color.OrangeRed;
-            this.dateTimeEnd2.CalendarTitleForeColor = System.Drawing.Color.Black;
-            this.dateTimeEnd2.CalendarTrailingForeColor = System.Drawing.Color.Black;
-            this.dateTimeEnd2.DisplayFocus = true;
-            this.dateTimeEnd2.FontSize = MetroFramework.MetroDateTimeSize.Tall;
-            this.dateTimeEnd2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimeEnd2.Location = new System.Drawing.Point(261, 58);
-            this.dateTimeEnd2.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimeEnd2.MinimumSize = new System.Drawing.Size(0, 35);
-            this.dateTimeEnd2.Name = "dateTimeEnd2";
-            this.dateTimeEnd2.Size = new System.Drawing.Size(150, 35);
-            this.dateTimeEnd2.TabIndex = 126;
-            this.dateTimeEnd2.UseCustomBackColor = true;
-            this.dateTimeEnd2.UseCustomForeColor = true;
-            this.dateTimeEnd2.UseStyleColors = true;
-            // 
             // label5
             // 
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -329,11 +231,11 @@ namespace BTL
             // 
             this.guna2GroupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2GroupBox3.Controls.Add(this.dateTimeEnd1);
+            this.guna2GroupBox3.Controls.Add(this.dateTimeStart1);
             this.guna2GroupBox3.Controls.Add(this.btnViewOrder);
             this.guna2GroupBox3.Controls.Add(this.label1);
-            this.guna2GroupBox3.Controls.Add(this.dateTimeStart1);
             this.guna2GroupBox3.Controls.Add(this.label14);
-            this.guna2GroupBox3.Controls.Add(this.dateTimeEnd1);
             this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(182)))), ((int)(((byte)(244)))));
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.Black;
@@ -344,14 +246,36 @@ namespace BTL
             this.guna2GroupBox3.TabIndex = 130;
             this.guna2GroupBox3.Text = "Thống Kê Hoá Đơn";
             // 
+            // btnViewOrder
+            // 
+            this.btnViewOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnViewOrder.CheckedState.Parent = this.btnViewOrder;
+            this.btnViewOrder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewOrder.CustomImages.Parent = this.btnViewOrder;
+            this.btnViewOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnViewOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnViewOrder.DisabledState.Parent = this.btnViewOrder;
+            this.btnViewOrder.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnViewOrder.ForeColor = System.Drawing.Color.White;
+            this.btnViewOrder.HoverState.Parent = this.btnViewOrder;
+            this.btnViewOrder.Location = new System.Drawing.Point(886, 56);
+            this.btnViewOrder.Name = "btnViewOrder";
+            this.btnViewOrder.ShadowDecoration.Parent = this.btnViewOrder;
+            this.btnViewOrder.Size = new System.Drawing.Size(132, 36);
+            this.btnViewOrder.TabIndex = 125;
+            this.btnViewOrder.Text = "Xem";
+            this.btnViewOrder.Click += new System.EventHandler(this.btnViewOrder_Click);
+            // 
             // guna2GroupBox4
             // 
             this.guna2GroupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2GroupBox4.Controls.Add(this.dateTimeEnd2);
+            this.guna2GroupBox4.Controls.Add(this.dateTimeStart2);
             this.guna2GroupBox4.Controls.Add(this.btnViewFood);
             this.guna2GroupBox4.Controls.Add(this.label4);
-            this.guna2GroupBox4.Controls.Add(this.dateTimeStart2);
-            this.guna2GroupBox4.Controls.Add(this.dateTimeEnd2);
             this.guna2GroupBox4.Controls.Add(this.label5);
             this.guna2GroupBox4.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(162)))), ((int)(((byte)(244)))));
             this.guna2GroupBox4.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -363,13 +287,35 @@ namespace BTL
             this.guna2GroupBox4.TabIndex = 131;
             this.guna2GroupBox4.Text = "Thống Kê Thực Đơn";
             // 
+            // btnViewFood
+            // 
+            this.btnViewFood.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnViewFood.CheckedState.Parent = this.btnViewFood;
+            this.btnViewFood.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnViewFood.CustomImages.Parent = this.btnViewFood;
+            this.btnViewFood.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewFood.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnViewFood.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnViewFood.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnViewFood.DisabledState.Parent = this.btnViewFood;
+            this.btnViewFood.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnViewFood.ForeColor = System.Drawing.Color.White;
+            this.btnViewFood.HoverState.Parent = this.btnViewFood;
+            this.btnViewFood.Location = new System.Drawing.Point(884, 57);
+            this.btnViewFood.Name = "btnViewFood";
+            this.btnViewFood.ShadowDecoration.Parent = this.btnViewFood;
+            this.btnViewFood.Size = new System.Drawing.Size(132, 36);
+            this.btnViewFood.TabIndex = 126;
+            this.btnViewFood.Text = "Xem";
+            this.btnViewFood.Click += new System.EventHandler(this.btnViewFood_Click);
+            // 
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2GroupBox2.Controls.Add(this.dateTimeFilter);
             this.guna2GroupBox2.Controls.Add(this.btnViewRevenue);
             this.guna2GroupBox2.Controls.Add(this.label3);
-            this.guna2GroupBox2.Controls.Add(this.dateTimeFilter);
             this.guna2GroupBox2.Controls.Add(this.cbFilter);
             this.guna2GroupBox2.Controls.Add(this.label2);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(202)))), ((int)(((byte)(244)))));
@@ -404,49 +350,50 @@ namespace BTL
             this.btnViewRevenue.Text = "Xem";
             this.btnViewRevenue.Click += new System.EventHandler(this.btnViewRevenue_Click);
             // 
-            // btnViewOrder
+            // dateTimeFilter
             // 
-            this.btnViewOrder.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnViewOrder.CheckedState.Parent = this.btnViewOrder;
-            this.btnViewOrder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnViewOrder.CustomImages.Parent = this.btnViewOrder;
-            this.btnViewOrder.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewOrder.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewOrder.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnViewOrder.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnViewOrder.DisabledState.Parent = this.btnViewOrder;
-            this.btnViewOrder.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnViewOrder.ForeColor = System.Drawing.Color.White;
-            this.btnViewOrder.HoverState.Parent = this.btnViewOrder;
-            this.btnViewOrder.Location = new System.Drawing.Point(886, 56);
-            this.btnViewOrder.Name = "btnViewOrder";
-            this.btnViewOrder.ShadowDecoration.Parent = this.btnViewOrder;
-            this.btnViewOrder.Size = new System.Drawing.Size(132, 36);
-            this.btnViewOrder.TabIndex = 125;
-            this.btnViewOrder.Text = "Xem";
-            this.btnViewOrder.Click += new System.EventHandler(this.btnViewOrder_Click);
+            this.dateTimeFilter.CustomFormat = "dd/MM/yyyy";
+            this.dateTimeFilter.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeFilter.Location = new System.Drawing.Point(140, 59);
+            this.dateTimeFilter.Name = "dateTimeFilter";
+            this.dateTimeFilter.Size = new System.Drawing.Size(139, 30);
+            this.dateTimeFilter.TabIndex = 126;
             // 
-            // btnViewFood
+            // dateTimeStart1
             // 
-            this.btnViewFood.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnViewFood.CheckedState.Parent = this.btnViewFood;
-            this.btnViewFood.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnViewFood.CustomImages.Parent = this.btnViewFood;
-            this.btnViewFood.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewFood.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnViewFood.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnViewFood.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnViewFood.DisabledState.Parent = this.btnViewFood;
-            this.btnViewFood.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnViewFood.ForeColor = System.Drawing.Color.White;
-            this.btnViewFood.HoverState.Parent = this.btnViewFood;
-            this.btnViewFood.Location = new System.Drawing.Point(884, 57);
-            this.btnViewFood.Name = "btnViewFood";
-            this.btnViewFood.ShadowDecoration.Parent = this.btnViewFood;
-            this.btnViewFood.Size = new System.Drawing.Size(132, 36);
-            this.btnViewFood.TabIndex = 126;
-            this.btnViewFood.Text = "Xem";
-            this.btnViewFood.Click += new System.EventHandler(this.btnViewFood_Click);
+            this.dateTimeStart1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimeStart1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeStart1.Location = new System.Drawing.Point(52, 59);
+            this.dateTimeStart1.Name = "dateTimeStart1";
+            this.dateTimeStart1.Size = new System.Drawing.Size(139, 30);
+            this.dateTimeStart1.TabIndex = 127;
+            // 
+            // dateTimeEnd1
+            // 
+            this.dateTimeEnd1.CustomFormat = "dd/MM/yyyy";
+            this.dateTimeEnd1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeEnd1.Location = new System.Drawing.Point(262, 59);
+            this.dateTimeEnd1.Name = "dateTimeEnd1";
+            this.dateTimeEnd1.Size = new System.Drawing.Size(139, 30);
+            this.dateTimeEnd1.TabIndex = 128;
+            // 
+            // dateTimeStart2
+            // 
+            this.dateTimeStart2.CustomFormat = "dd/MM/yyyy";
+            this.dateTimeStart2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeStart2.Location = new System.Drawing.Point(50, 57);
+            this.dateTimeStart2.Name = "dateTimeStart2";
+            this.dateTimeStart2.Size = new System.Drawing.Size(139, 30);
+            this.dateTimeStart2.TabIndex = 129;
+            // 
+            // dateTimeEnd2
+            // 
+            this.dateTimeEnd2.CustomFormat = "dd/MM/yyyy";
+            this.dateTimeEnd2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimeEnd2.Location = new System.Drawing.Point(260, 57);
+            this.dateTimeEnd2.Name = "dateTimeEnd2";
+            this.dateTimeEnd2.Size = new System.Drawing.Size(139, 30);
+            this.dateTimeEnd2.TabIndex = 130;
             // 
             // ucThongKe
             // 
@@ -468,9 +415,6 @@ namespace BTL
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroDateTime dateTimeEnd1;
-        private MetroFramework.Controls.MetroDateTime dateTimeStart1;
         private System.Windows.Forms.Label totalGroup;
         private System.Windows.Forms.Label totalFood;
         private System.Windows.Forms.Label totalTable;
@@ -482,10 +426,7 @@ namespace BTL
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private Guna.UI2.WinForms.Guna2ComboBox cbFilter;
-        private MetroFramework.Controls.MetroDateTime dateTimeFilter;
         private System.Windows.Forms.Label label4;
-        private MetroFramework.Controls.MetroDateTime dateTimeStart2;
-        private MetroFramework.Controls.MetroDateTime dateTimeEnd2;
         private System.Windows.Forms.Label label5;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox4;
@@ -493,5 +434,10 @@ namespace BTL
         private Guna.UI2.WinForms.Guna2Button btnViewFood;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
         private Guna.UI2.WinForms.Guna2Button btnViewRevenue;
+        private System.Windows.Forms.DateTimePicker dateTimeEnd1;
+        private System.Windows.Forms.DateTimePicker dateTimeStart1;
+        private System.Windows.Forms.DateTimePicker dateTimeEnd2;
+        private System.Windows.Forms.DateTimePicker dateTimeStart2;
+        private System.Windows.Forms.DateTimePicker dateTimeFilter;
     }
 }

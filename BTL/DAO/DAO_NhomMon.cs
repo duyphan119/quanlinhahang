@@ -1,5 +1,6 @@
 ﻿using BTL.Model;
 using BTL.utils;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
@@ -20,60 +21,111 @@ namespace BTL.DAO
         public List<NhomMon> getAll()
         {
             List<NhomMon> result = new List<NhomMon>();
-            cnn.Open();
-            scm = new SqlCommand("select * from nhommon", cnn);
-            reader = scm.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                string manhom = reader.GetString(0);
-                string tennhom = reader.GetString(1);
-                NhomMon nhom = new NhomMon(manhom, tennhom);
-                result.Add(nhom);
+                cnn.Open();
+                scm = new SqlCommand("select * from nhommon", cnn);
+                reader = scm.ExecuteReader();
+                while (reader.Read())
+                {
+                    string manhom = reader.GetString(0);
+                    string tennhom = reader.GetString(1);
+                    NhomMon nhom = new NhomMon(manhom, tennhom);
+                    result.Add(nhom);
+                }
             }
-            cnn.Close();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
             return result;
         }
 
         public NhomMon getById(string id)
         {
-            cnn.Open();
-            scm = new SqlCommand($"select * from nhommon where manhom = '{id}'", cnn);
-            reader = scm.ExecuteReader();
-            while (reader.Read())
+            NhomMon nhom = null;
+            try
             {
-                string manhom = reader.GetString(0);
-                string tennhom = reader.GetString(1);
-                NhomMon nhom = new NhomMon(manhom, tennhom);
-                cnn.Close();
-                return nhom;
+                cnn.Open();
+                scm = new SqlCommand($"select * from nhommon where manhom = '{id}'", cnn);
+                reader = scm.ExecuteReader();
+                while (reader.Read())
+                {
+                    string manhom = reader.GetString(0);
+                    string tennhom = reader.GetString(1);
+                    nhom = new NhomMon(manhom, tennhom);
+                    cnn.Close();
+                    return nhom;
+                }
             }
-            cnn.Close();
-            return null;
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
+            return nhom;
         }
 
         public void insert(NhomMon nhom)
         {
-            cnn.Open();
-            scm = new SqlCommand($@"insert into nhommon (manhom, tennhom) values
+            try
+            {
+                cnn.Open();
+                scm = new SqlCommand($@"insert into nhommon (manhom, tennhom) values
                         ('{nhom.ma}',N'{nhom.ten}')", cnn);
-            scm.ExecuteNonQuery();
-            cnn.Close();
+                scm.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
         }
 
         public void updateOne(NhomMon nhom)
         {
-            cnn.Open();
-            scm = new SqlCommand($@"update nhommon set tennhom = N'{nhom.ten}' where manhom = '{nhom.ma}'", cnn);
-            scm.ExecuteNonQuery();
-            cnn.Close();
+            try
+            {
+                cnn.Open();
+                scm = new SqlCommand($@"update nhommon set tennhom = N'{nhom.ten}' where manhom = '{nhom.ma}'", cnn);
+                scm.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
         }
 
         public void deleteOne(string id)
         {
-            cnn.Open();
-            scm = new SqlCommand($"delete from nhommon where manhom = '{id}'", cnn);
-            scm.ExecuteNonQuery();
-            cnn.Close();
+            try
+            {
+                cnn.Open();
+                scm = new SqlCommand($"delete from nhommon where manhom = '{id}'", cnn);
+                scm.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
         }
 
         public string genetareID()

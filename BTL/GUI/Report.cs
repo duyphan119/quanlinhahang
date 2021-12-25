@@ -1,5 +1,6 @@
 ﻿using BTL.DAO;
 using BTL.Model;
+using Guna.UI2.WinForms;
 using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace BTL
 
         public void xuatHoaDon(HoaDon hd)
         {
+            Text = "Hoá đơn";
             table.Rows.Clear();
             table.Columns.Clear();
             table.Columns.Add("sohd", typeof(string));
@@ -71,9 +73,11 @@ namespace BTL
             InitializeComponent();
             if(type == false)
             {
+                Text = "Thống kê hoá đơn";
                 thongKeHoaDon(s,e);
             }else if(type == true)
             {
+                Text = "Thống kê thực đơn";
                 thongKeMonAn(s, e);
             }
         }
@@ -93,7 +97,16 @@ namespace BTL
                 table.Rows.Add(item.mon.mamon, item.mon.ten, item.mon.dvt, item.soluong, item.mon.gia, item.mon.nhom.ten);
             });
             reportViewer2.LocalReport.ReportPath = "../../GUI/reports/ThongKeMonAn.rdlc";
-            ReportParameter rptTitle = new ReportParameter("title", $"Danh sách thực đơn từ ngày {start.ToString("dd/MM/yyyy")} đến ngày {end.ToString("dd/MM/yyyy")}");
+            string title = "";
+            if(start == end)
+            {
+                title = $"Danh sách thực đơn trong ngày {start.ToString("dd/MM/yyyy")}";
+            }
+            else
+            {
+                title = $"Danh sách thực đơn từ ngày {start.ToString("dd/MM/yyyy")} đến ngày {end.ToString("dd/MM/yyyy")}";
+            }
+            ReportParameter rptTitle = new ReportParameter("title", title);
             reportViewer2.LocalReport.SetParameters(new ReportParameter[] { rptTitle });
             ReportDataSource rds = new ReportDataSource();
             rds.Name = "DataSet1";
@@ -118,7 +131,16 @@ namespace BTL
                 table.Rows.Add(item.sohd, item.giovao.ToString("dd/MM/yyyy HH:mm:ss"), item.giora.ToString("dd/MM/yyyy HH:mm:ss"), item.ban.soban, dao_hd.getTotalPrice(item.sohd), item.nv.ten);
             });
             reportViewer2.LocalReport.ReportPath = "../../GUI/reports/ThongKeHoaDon.rdlc";
-            ReportParameter rptTitle = new ReportParameter("title", $"Danh sách hoá đơn từ ngày {start.ToString("dd/MM/yyyy")} đến ngày {end.ToString("dd/MM/yyyy")}");
+            string title = "";
+            if (start == end)
+            {
+                title = $"Danh sách hoá đơn trong ngày {start.ToString("dd/MM/yyyy")}";
+            }
+            else
+            {
+                title = $"Danh sách hoá đơn từ ngày {start.ToString("dd/MM/yyyy")} đến ngày {end.ToString("dd/MM/yyyy")}";
+            }
+            ReportParameter rptTitle = new ReportParameter("title", title);
             reportViewer2.LocalReport.SetParameters(new ReportParameter[] { rptTitle });
             ReportDataSource rds = new ReportDataSource();
             rds.Name = "DataSet1";
@@ -224,7 +246,7 @@ namespace BTL
                 table.Rows.Add("Năm " + item.time, item.value);
             });
             reportViewer2.LocalReport.ReportPath = "../../GUI/reports/BieuDo.rdlc";
-            ReportParameter rptTitle = new ReportParameter($"Doanh Thu {num} Năm Gần Đây");
+            ReportParameter rptTitle = new ReportParameter("title",$"Doanh Thu {num} Năm Gần Đây");
             reportViewer2.LocalReport.SetParameters(new ReportParameter[] { rptTitle });
             ReportDataSource rds = new ReportDataSource();
             rds.Name = "DataSet1";
@@ -240,22 +262,27 @@ namespace BTL
             table.Columns.Add("value", typeof(decimal));
             if (index == 0)
             {
+                Text = "Thống kê các ngày trong tuần";
                 thongKeCacNgayTrongTuan();
             }
             else if (index == 1)
             {
+                Text = "Thống kê các ngày trong tháng";
                 thongKeCacNgayTrongThang();
             }
             else if (index == 2)
             {
+                Text = "Thống kê các tháng trong năm";
                 thongKeCacThangTrongNam();
             }
             else if (index == 3)
             {
+                Text = "Thống kê các quý trong năm";
                 thongKeCacQuyTrongNam();
             }
             else if (index == 4)
             {
+                Text = "Thống kê ba năm gần đây";
                 thongKeCacNamGanDay(3);
             }
         }
@@ -349,6 +376,7 @@ namespace BTL
 
         public void phieuNhap(Phieu phieu)
         {
+            Text = "Phiếu nhập";
             string connetionString = @"Data Source=DESKTOP-NIULDEP\SQLEXPRESS;Initial Catalog=btl_pttkht;User ID=sa;Password=password";
             cnn = new SqlConnection(connetionString);
             DataSet ds = new DataSet();
@@ -381,6 +409,7 @@ namespace BTL
 
         public void phieuXuat(Phieu phieu)
         {
+            Text = "Phiếu xuất";
             string connetionString = @"Data Source=DESKTOP-NIULDEP\SQLEXPRESS;Initial Catalog=btl_pttkht;User ID=sa;Password=password";
             cnn = new SqlConnection(connetionString);
             DataSet ds = new DataSet();
@@ -413,6 +442,12 @@ namespace BTL
         private void Report_Load(object sender, EventArgs e)
         {
             
+        }
+
+        private void Report_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult answer = MessageDialog.Show("Bạn có chắc chắn thoát ?", "Câu hỏi", MessageDialogButtons.YesNo, MessageDialogIcon.Question, MessageDialogStyle.Dark);
+            e.Cancel = answer == DialogResult.No;
         }
     }
 }

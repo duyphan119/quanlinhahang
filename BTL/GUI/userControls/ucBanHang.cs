@@ -137,19 +137,19 @@ namespace BTL
                 if (index != -1)
                 {
                     hoa_don_cua_ban_dang_chon.ds_mon = dao_cthd.getAll(hoa_don_cua_ban_dang_chon.sohd);
+                    hoa_don_cua_ban_dang_chon.giora = DateTime.Now;
                     ds_hd[index] = hoa_don_cua_ban_dang_chon;
+                    dao_hd.discharge(ds_hd[index].sohd, ds_hd[index].giora);
+                    dgvFood.Rows.Clear();
+                    totalPrice = 0;
+                    lbPriceSum.Text = "Tổng tiền: 0đ";
+                    lblTimeIn.Text = "Giờ khách vào:";
+                    lblInfoTable.Text = "Bàn:";
+                    btn_table.discharge();
+                    hoa_don_cua_ban_dang_chon = null;
+                    ban_dang_chon = null;
+                    btn_table = null;
                 }
-                ds_hd[index].giora = DateTime.Now;
-                dao_hd.discharge(ds_hd[index].sohd, ds_hd[index].giora);
-                dgvFood.Rows.Clear();
-                totalPrice = 0;
-                lbPriceSum.Text = "Tổng tiền: 0đ";
-                lblTimeIn.Text = "Giờ khách vào:";
-                lblInfoTable.Text = "Bàn:";
-                btn_table.discharge();
-                hoa_don_cua_ban_dang_chon = null;
-                ban_dang_chon = null;
-                btn_table = null;
                 return index;
             }
             else
@@ -290,9 +290,11 @@ namespace BTL
                         int vi_tri = hoa_don_cua_ban_dang_chon.ds_mon.FindIndex(ct => ct.mon.ten == foodName && ct.mon.dvt == foodUnit);
                         if (vi_tri != -1)
                         {
+                            totalPrice -= (hoa_don_cua_ban_dang_chon.ds_mon[vi_tri].mon.gia * hoa_don_cua_ban_dang_chon.ds_mon[vi_tri].soluong);
                             dao_cthd.deleteOne(hoa_don_cua_ban_dang_chon.sohd, hoa_don_cua_ban_dang_chon.ds_mon[vi_tri].mon.mamon);
                             hoa_don_cua_ban_dang_chon.ds_mon.RemoveAt(index);
                             dgvFood.Rows.RemoveAt(index);
+                            lbPriceSum.Text = $"Tổng tiền: {totalPrice.ToString("#,##")}đ";
                         }
                     }
                 }
@@ -347,6 +349,26 @@ namespace BTL
 
                     cbNewTable.Items.Remove(ban_dang_chon.soban);
                 }
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            //Nếu bàn này không đặt món thì mới có thể huỷ
+            if(hoa_don_cua_ban_dang_chon != null && hoa_don_cua_ban_dang_chon.ds_mon.Count == 0)
+            {
+                ds_hd.Remove(hoa_don_cua_ban_dang_chon);
+                dao_hd.cancelBookTable(hoa_don_cua_ban_dang_chon);
+                totalPrice = 0;
+                lbPriceSum.Text = "Tổng tiền: 0đ";
+                lblTimeIn.Text = "Giờ khách vào:";
+                btn_table.discharge();
+                btn_table.active();
+                hoa_don_cua_ban_dang_chon = null;
+            }
+            else
+            {
+                MessageDialog.Show("Bàn này còn thực đơn. Không thể xoá", "Lưu ý", MessageDialogButtons.OK, MessageDialogIcon.Error, MessageDialogStyle.Dark);
             }
         }
     }

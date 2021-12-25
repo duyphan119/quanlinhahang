@@ -245,6 +245,19 @@ namespace BTL
         private void dgvFood_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnDelete.Enabled = true;
+            if (action == EDIT)
+            {
+                int index = e.RowIndex;
+                if (index != -1)
+                {
+                    MonAn mon = ds_mon.Find(item => "" + item.mamon == dgvFood.Rows[index].Cells[1].Value.ToString());
+                    if (mon != null)
+                    {
+                        setData(mon);
+                        cbId.Text = dgvFood.Rows[index].Cells[1].Value.ToString();
+                    }
+                }
+            }
         }
 
         private void cbId_SelectedIndexChanged_1(object sender, EventArgs e)

@@ -157,6 +157,9 @@
   <data name="system-update" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\public\img\system-update.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="prohibition" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\public\img\prohibition.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="menu-active" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\public\img\menu-active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -202,6 +205,9 @@
   <data name="user1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\public\img\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="9bff43d62685d3adde048684e80cb913" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\public\img\9bff43d62685d3adde048684e80cb913.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="export" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\public\img\export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -241,7 +247,7 @@
   <data name="house-active" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\public\img\house-active.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="9bff43d62685d3adde048684e80cb913" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\public\img\9bff43d62685d3adde048684e80cb913.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="printer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\public\img\printer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -21,94 +21,135 @@ namespace BTL.DAO
         public List<NhanVien> getAll()
         {
             List<NhanVien> result = new List<NhanVien>();
-            cnn.Open();
-            scm = new SqlCommand("select * from nhanvien", cnn);
-            reader = scm.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                string ma = reader.GetString(0);
-                string tennv = reader.GetString(1);
-                DateTime ngaysinh = reader.GetDateTime(2);
-                string gioitinh = reader.GetString(3);
-                string diachi = reader.GetString(4);
-                string sdt = reader.GetString(5);
-                string chucvu = reader.GetString(6);
-                string mk = reader.GetString(7);
-                NhanVien nv = new NhanVien(
-                    ma, tennv, ngaysinh, gioitinh, diachi, sdt, chucvu, mk
-                );
-                result.Add(nv);
+                cnn.Open();
+                scm = new SqlCommand("select * from nhanvien", cnn);
+                reader = scm.ExecuteReader();
+                while (reader.Read())
+                {
+                    string ma = reader.GetString(0);
+                    string tennv = reader.GetString(1);
+                    DateTime ngaysinh = reader.GetDateTime(2);
+                    string gioitinh = reader.GetString(3);
+                    string diachi = reader.GetString(4);
+                    string sdt = reader.GetString(5);
+                    string chucvu = reader.GetString(6);
+                    string mk = reader.GetString(7);
+                    NhanVien nv = new NhanVien(
+                        ma, tennv, ngaysinh, gioitinh, diachi, sdt, chucvu, mk
+                    );
+                    result.Add(nv);
+                }
             }
-            cnn.Close();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
             return result;
         }
 
         public List<NhanVien> searchByName(string keyword)
         {
             List<NhanVien> result = new List<NhanVien>();
-            cnn.Open();
-            scm = new SqlCommand($"select * from nhanvien where tennv like N'%{keyword}%'", cnn);
-            reader = scm.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                string ma = reader.GetString(0);
-                string tennv = reader.GetString(1);
-                DateTime ngaysinh = reader.GetDateTime(2);
-                string gioitinh = reader.GetString(3);
-                string diachi = reader.GetString(4);
-                string sdt = reader.GetString(5);
-                string chucvu = reader.GetString(6);
-                string mk = reader.GetString(7);
-                NhanVien nv = new NhanVien(
-                    ma, tennv, ngaysinh, gioitinh, diachi, sdt, chucvu, mk
-                );
-                result.Add(nv);
+                cnn.Open();
+                scm = new SqlCommand($"select * from nhanvien where tennv like N'%{keyword}%'", cnn);
+                reader = scm.ExecuteReader();
+                while (reader.Read())
+                {
+                    string ma = reader.GetString(0);
+                    string tennv = reader.GetString(1);
+                    DateTime ngaysinh = reader.GetDateTime(2);
+                    string gioitinh = reader.GetString(3);
+                    string diachi = reader.GetString(4);
+                    string sdt = reader.GetString(5);
+                    string chucvu = reader.GetString(6);
+                    string mk = reader.GetString(7);
+                    NhanVien nv = new NhanVien(
+                        ma, tennv, ngaysinh, gioitinh, diachi, sdt, chucvu, mk
+                    );
+                    result.Add(nv);
+                }
             }
-            cnn.Close();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
             return result;
         }
 
         public NhanVien getById(string id)
         {
-            cnn.Open();
-            scm = new SqlCommand($"select * from nhanvien where manv = '{id}'", cnn);
-            reader = scm.ExecuteReader();
-            if (reader.Read())
+            NhanVien nv = null;
+            try
             {
-                string ma = reader.GetString(0);
-                string tennv = reader.GetString(1);
-                DateTime ngaysinh = reader.GetDateTime(2);
-                string gioitinh = reader.GetString(3);
-                string diachi = reader.GetString(4);
-                string sdt = reader.GetString(5);
-                string chucvu = reader.GetString(6);
-                string mk = reader.GetString(7);
-                NhanVien nv = new NhanVien(
-                    ma, tennv, ngaysinh, gioitinh, diachi, sdt, chucvu, mk
-                );
-                cnn.Close();
-                return nv;
+                cnn.Open();
+                scm = new SqlCommand($"select * from nhanvien where manv = '{id}'", cnn);
+                reader = scm.ExecuteReader();
+                if (reader.Read())
+                {
+                    string ma = reader.GetString(0);
+                    string tennv = reader.GetString(1);
+                    DateTime ngaysinh = reader.GetDateTime(2);
+                    string gioitinh = reader.GetString(3);
+                    string diachi = reader.GetString(4);
+                    string sdt = reader.GetString(5);
+                    string chucvu = reader.GetString(6);
+                    string mk = reader.GetString(7);
+                    nv = new NhanVien(
+                        ma, tennv, ngaysinh, gioitinh, diachi, sdt, chucvu, mk
+                    );
+                }
             }
-            cnn.Close();
-            return null;
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
+            return nv;
         }
 
         public void insert(NhanVien nv)
         {
-            cnn.Open();
-            scm = new SqlCommand( 
-                $@"insert into nhanvien(manv, tennv, ngaysinh, gioitinh, sdt, chucvu, matkhau, diachi) values
+            try
+            {
+                cnn.Open();
+                scm = new SqlCommand(
+                    $@"insert into nhanvien(manv, tennv, ngaysinh, gioitinh, sdt, chucvu, matkhau, diachi) values
                     ('{nv.ma}', N'{nv.ten}','{nv.ngaysinh}', N'{nv.gioitinh}', '{nv.sdt}', N'{nv.chucvu}', 
                     '{nv.matkhau}', N'{nv.diachi}')", cnn);
-            scm.ExecuteNonQuery();
-            cnn.Close();
+                scm.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
         }
 
         public void update(NhanVien nv)
         {
-            cnn.Open();
-            scm = new SqlCommand(
-                $@"update nhanvien set 
+            try
+            {
+                cnn.Open();
+                scm = new SqlCommand(
+                    $@"update nhanvien set 
                         tennv = N'{nv.ten}', 
                         ngaysinh = '{nv.ngaysinh}', 
                         gioitinh = N'{nv.gioitinh}', 
@@ -117,20 +158,39 @@ namespace BTL.DAO
                         chucvu =N'{nv.chucvu}',
                         matkhau='{nv.matkhau}'
                         where manv ='{nv.ma}'", cnn);
-            scm.ExecuteNonQuery();
-            cnn.Close();
+                scm.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
         }
 
         public void deleteById(string id)
         {
-            cnn.Open();
-            scm = new SqlCommand($"delete from nhanvien where manv = {id}" , cnn);
-            scm.ExecuteNonQuery();
-            cnn.Close();
+            try
+            {
+                cnn.Open();
+                scm = new SqlCommand($"delete from nhanvien where manv = {id}", cnn);
+                scm.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
         }
 
         public NhanVien login(string manv, string matkhau)
         {
+            NhanVien nv = null;
             try
             {
                 cnn.Open();
@@ -146,39 +206,45 @@ namespace BTL.DAO
                     string sdt = reader.GetString(5);
                     string chucvu = reader.GetString(6);
                     string mk = reader.GetString(7);
-                    NhanVien nv = new NhanVien(
+                    nv = new NhanVien(
                         ma, tennv, ngaysinh, gioitinh, diachi, sdt, chucvu, mk
                     );
-                    cnn.Close();
-                    return nv;
-                }
-                else
-                {
-                    cnn.Close();
-                    return null;
                 }
             }
-            catch(SqlException ex)
+            catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                cnn.Close();
-                return null;
             }
+            finally
+            {
+                cnn.Close();
+            }
+            return nv;
         }
 
         public string changePassword(NhanVien nv, string oldPassword, string newPassword, string confirmNewPassword)
         {
-            if(nv.matkhau == oldPassword)
+            if (nv.matkhau == oldPassword)
             {
                 if(newPassword == confirmNewPassword)
                 {
-                    cnn.Open();
-                    SqlCommand scm = new SqlCommand(
-                        $@"update nhanvien set 
+                    try
+                    {
+                        cnn.Open();
+                        SqlCommand scm = new SqlCommand(
+                            $@"update nhanvien set 
                         matkhau='{newPassword}' 
                         where manv = '{nv.ma}'", cnn);
-                    scm.ExecuteNonQuery();
-                    cnn.Close();
+                        scm.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex);
+                    }
+                    finally
+                    {
+                        cnn.Close();
+                    }
                     return "";
                 }
                 else

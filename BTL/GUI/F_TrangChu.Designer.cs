@@ -30,6 +30,7 @@ namespace BTL
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(F_TrangChu));
             this.guna2DragControl4 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -352,7 +353,7 @@ namespace BTL
             this.btnSideBarItem2.ShadowDecoration.Parent = this.btnSideBarItem2;
             this.btnSideBarItem2.Size = new System.Drawing.Size(214, 42);
             this.btnSideBarItem2.TabIndex = 5;
-            this.btnSideBarItem2.Text = "Bán Hàng";
+            this.btnSideBarItem2.Text = "Đặt Bàn";
             this.btnSideBarItem2.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.btnSideBarItem2.TextOffset = new System.Drawing.Point(5, 0);
             this.btnSideBarItem2.Click += new System.EventHandler(this.btnSideBarItem2_Click);
@@ -675,6 +676,7 @@ namespace BTL
             this.Controls.Add(this.panel3);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "F_TrangChu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "F_TrangChu";

@@ -42,9 +42,8 @@ namespace BTL
             totalTable.Text = "Tổng số bàn: " + ds_ban.Count;
             totalFood.Text = "Tổng số thực đơn: " + ds_mon.Count;
             totalGroup.Text = "Tổng số nhóm thực đơn: " + ds_nhom.Count;
-            cbFilter.SelectedIndex = 0;
-
             thongKeChung();
+            cbFilter.SelectedIndex = 0;
         }
 
         private void btnViewRevenue_Click(object sender, EventArgs e)

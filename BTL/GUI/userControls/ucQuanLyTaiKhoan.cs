@@ -292,6 +292,19 @@ namespace BTL
             if(dgvEmployee.SelectedRows.Count > 0)
             {
                 btnDelete.Enabled = true;
+                if (action == EDIT)
+                {
+                    int index = e.RowIndex;
+                    if(index != -1)
+                    {
+                        NhanVien nv = ds_nv.Find(item => "" + item.ma == dgvEmployee.Rows[index].Cells[0].Value.ToString());
+                        if (nv != null)
+                        {
+                            setData(nv);
+                            cbId.Text = dgvEmployee.Rows[index].Cells[0].Value.ToString();
+                        }
+                    }
+                }
             }
         }
 

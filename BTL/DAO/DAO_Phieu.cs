@@ -21,63 +21,104 @@ namespace BTL.DAO
         public List<Phieu> getAll(bool type)//true: phiếu nhập, false: phiếu xuất
         {
             List<Phieu> result = new List<Phieu>();
-            cnn.Open();
-            string query = (type == true) ? "select * from phieunhap" : "select * from phieuxuat";
-            scm = new SqlCommand(query, cnn);
-            reader = scm.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                string ma = reader.GetString(0);
-                DateTime ngaynhap = reader.GetDateTime(1);
-                Phieu ph = new Phieu(ma, ngaynhap, new DAO_NhanVien().getById(reader.GetString(2)), new List<ChiTietPhieu>());
-                result.Add(ph);
+                cnn.Open();
+                string query = (type == true) ? "select * from phieunhap" : "select * from phieuxuat";
+                scm = new SqlCommand(query, cnn);
+                reader = scm.ExecuteReader();
+                while (reader.Read())
+                {
+                    string ma = reader.GetString(0);
+                    DateTime ngaynhap = reader.GetDateTime(1);
+                    Phieu ph = new Phieu(ma, ngaynhap, new DAO_NhanVien().getById(reader.GetString(2)), new List<ChiTietPhieu>());
+                    result.Add(ph);
+                }
             }
-            cnn.Close();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
             return result;
         }
 
         public Phieu getById(bool type, string sophieu)
         {
-            cnn.Open();
-            string query = (type == true) ? $"select * from phieunhap where sopn ='{sophieu}'" : 
-                                            $"select * from phieuxuat where sopx ='{sophieu}'";
-            scm = new SqlCommand(query, cnn);
-            reader = scm.ExecuteReader();
-            while (reader.Read())
+            Phieu ph = null;
+            try
             {
-                string ma = reader.GetString(0);
-                DateTime ngaynhap = reader.GetDateTime(1);
-                Phieu ph = new Phieu(ma, ngaynhap, new DAO_NhanVien().getById(reader.GetString(2)), new List<ChiTietPhieu>());
-                cnn.Close();
-                return ph;
+                cnn.Open();
+                string query = (type == true) ? $"select * from phieunhap where sopn ='{sophieu}'" :
+                                                $"select * from phieuxuat where sopx ='{sophieu}'";
+                scm = new SqlCommand(query, cnn);
+                reader = scm.ExecuteReader();
+                while (reader.Read())
+                {
+                    string ma = reader.GetString(0);
+                    DateTime ngaynhap = reader.GetDateTime(1);
+                    ph = new Phieu(ma, ngaynhap, new DAO_NhanVien().getById(reader.GetString(2)), new List<ChiTietPhieu>());
+                    cnn.Close();
+                    return ph;
+                }
             }
-            cnn.Close();
-            return null;
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
+            return ph;
         }
 
         public Phieu insert(bool type, Phieu phieu, NhanVien nv)
         {
             phieu.nv = nv;
             DateTime now = DateTime.Now;
-            cnn.Open();
-            string query = (type == true) ? 
-                $@"insert into phieunhap(sopn, ngaynhap, manv) values ('{phieu.sophieu}','{now}',{nv.ma})" :
-                $@"insert into phieuxuat(sopx, ngayxuat, manv) values ('{phieu.sophieu}','{now}',{nv.ma})";
-            scm = new SqlCommand(query, cnn);
-            scm.ExecuteNonQuery();
-            cnn.Close();
+            try
+            {
+                cnn.Open();
+                string query = (type == true) ?
+                    $@"insert into phieunhap(sopn, ngaynhap, manv) values ('{phieu.sophieu}','{now}',{nv.ma})" :
+                    $@"insert into phieuxuat(sopx, ngayxuat, manv) values ('{phieu.sophieu}','{now}',{nv.ma})";
+                scm = new SqlCommand(query, cnn);
+                scm.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
             return phieu;
         }
 
         public void deleteOne(bool type, string sophieu)
         {
-            cnn.Open();
-            string query = (type == true) ?
-                $@"delete from phieunhap where  sopn = '{sophieu}'" :
-                $@"delete from phieuxuat where  sopx = '{sophieu}'";
-            scm = new SqlCommand(query, cnn);
-            scm.ExecuteNonQuery();
-            cnn.Close();
+            try
+            {
+                cnn.Open();
+                string query = (type == true) ?
+                    $@"delete from phieunhap where  sopn = '{sophieu}'" :
+                    $@"delete from phieuxuat where  sopx = '{sophieu}'";
+                scm = new SqlCommand(query, cnn);
+                scm.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
         }
 
         public string genetareID(bool type)

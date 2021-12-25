@@ -1,5 +1,6 @@
 ﻿using BTL.Model;
 using BTL.utils;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 
@@ -19,88 +20,149 @@ namespace BTL.DAO
 
         public List<NhaCungCap> getAll()
         {
-            List<NhaCungCap> result = new List<NhaCungCap>();
-            cnn.Open();
-            scm = new SqlCommand("select * from nhacungcap", cnn);
-            reader = scm.ExecuteReader();
-            while (reader.Read())
+            List<NhaCungCap> result = new List<NhaCungCap>(); 
+            try
             {
-                string ma = reader.GetString(0);
-                string ten = reader.GetString(1);
-                string dc = reader.GetString(2);
-                string sdt = reader.GetString(3);
-                NhaCungCap ncc = new NhaCungCap(ma, ten, dc, sdt);
-                result.Add(ncc);
+                cnn.Open();
+                scm = new SqlCommand("select * from nhacungcap", cnn);
+                reader = scm.ExecuteReader();
+                while (reader.Read())
+                {
+                    string ma = reader.GetString(0);
+                    string ten = reader.GetString(1);
+                    string dc = reader.GetString(2);
+                    string sdt = reader.GetString(3);
+                    NhaCungCap ncc = new NhaCungCap(ma, ten, dc, sdt);
+                    result.Add(ncc);
+                }
             }
-            cnn.Close();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
             return result;
         }
 
         public void insert(NhaCungCap ncc)
         {
-            cnn.Open();
-            scm = new SqlCommand(
-                $@"insert into nhacungcap(mancc, tenncc, diachi, sdt)
+            try
+            {
+                cnn.Open();
+                scm = new SqlCommand(
+                    $@"insert into nhacungcap(mancc, tenncc, diachi, sdt)
                     values ('{ncc.ma}',N'{ncc.ten}',N'{ncc.diachi}','{ncc.sdt}')
                     ", cnn);
-            scm.ExecuteNonQuery();
-            cnn.Close();
+                scm.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
         }
 
         public void updateOne(NhaCungCap ncc)
         {
-            cnn.Open();
-            scm = new SqlCommand(
-                $@"update nhacungcap set tenncc = N'{ncc.ten}',
+            try
+            {
+                cnn.Open();
+                scm = new SqlCommand(
+                    $@"update nhacungcap set tenncc = N'{ncc.ten}',
                     diachi = N'{ncc.diachi}', sdt = '{ncc.sdt}' where
                     mancc = '{ncc.ma}'", cnn);
-            scm.ExecuteNonQuery();
-            cnn.Close();
+                scm.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
         }
 
         public void deleteOne(string id)
         {
-            cnn.Open();
-            scm = new SqlCommand($@"delete from nhacungcap where mancc = '{id}'", cnn);
-            scm.ExecuteNonQuery();
-            cnn.Close();
+            try
+            {
+                cnn.Open();
+                scm = new SqlCommand($@"delete from nhacungcap where mancc = '{id}'", cnn);
+                scm.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
         }
 
         public List<NhaCungCap> searchByName(string keyword)
         {
             List<NhaCungCap> result = new List<NhaCungCap>();
-            cnn.Open();
-            scm = new SqlCommand($"select * from nhacungcap where tenncc like N'%{keyword}%'", cnn);
-            reader = scm.ExecuteReader();
-            while (reader.Read())
+            try
             {
-                string ma = reader.GetString(0);
-                string ten = reader.GetString(1);
-                string dc = reader.GetString(2);
-                string sdt = reader.GetString(3);
-                NhaCungCap ncc = new NhaCungCap(ma, ten, dc, sdt);
-                result.Add(ncc);
+                cnn.Open();
+                scm = new SqlCommand($"select * from nhacungcap where tenncc like N'%{keyword}%'", cnn);
+                reader = scm.ExecuteReader();
+                while (reader.Read())
+                {
+                    string ma = reader.GetString(0);
+                    string ten = reader.GetString(1);
+                    string dc = reader.GetString(2);
+                    string sdt = reader.GetString(3);
+                    NhaCungCap ncc = new NhaCungCap(ma, ten, dc, sdt);
+                    result.Add(ncc);
+                }
             }
-            cnn.Close();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
             return result;
         }
 
         public NhaCungCap getById(string id)
         {
-            cnn.Open();
-            scm = new SqlCommand($"select * from nhacungcap where mancc = '{id}'", cnn);
-            reader = scm.ExecuteReader();
-            if (reader.Read())
+            NhaCungCap result = null;
+            try
             {
-                string ma = reader.GetString(0);
-                string ten = reader.GetString(1);
-                string dc = reader.GetString(2);
-                string sdt = reader.GetString(3);
-                NhaCungCap result = new NhaCungCap(ma, ten, dc, sdt);
-                cnn.Close();
-                return result;
+                cnn.Open();
+                scm = new SqlCommand($"select * from nhacungcap where mancc = '{id}'", cnn);
+                reader = scm.ExecuteReader();
+                if (reader.Read())
+                {
+                    string ma = reader.GetString(0);
+                    string ten = reader.GetString(1);
+                    string dc = reader.GetString(2);
+                    string sdt = reader.GetString(3);
+                    result = new NhaCungCap(ma, ten, dc, sdt);
+                    cnn.Close();
+                    return result;
+                }
             }
-            cnn.Close();
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                cnn.Close();
+            }
             return null;
         }
 

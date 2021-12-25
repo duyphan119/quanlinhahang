@@ -31,6 +31,7 @@ namespace BTL
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DSPhieu));
             this.dgvList = new System.Windows.Forms.DataGridView();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,7 +80,7 @@ namespace BTL
             this.dgvList.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvList.EnableHeadersVisualStyles = false;
             this.dgvList.GridColor = System.Drawing.Color.Black;
-            this.dgvList.Location = new System.Drawing.Point(24, 66);
+            this.dgvList.Location = new System.Drawing.Point(24, 12);
             this.dgvList.Name = "dgvList";
             this.dgvList.RowHeadersVisible = false;
             this.dgvList.RowHeadersWidth = 51;
@@ -93,7 +94,7 @@ namespace BTL
             this.dgvList.RowTemplate.Height = 24;
             this.dgvList.RowTemplate.ReadOnly = true;
             this.dgvList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvList.Size = new System.Drawing.Size(622, 342);
+            this.dgvList.Size = new System.Drawing.Size(622, 396);
             this.dgvList.TabIndex = 121;
             this.dgvList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvList_CellClick);
             // 
@@ -185,7 +186,9 @@ namespace BTL
             this.Controls.Add(this.label12);
             this.Controls.Add(this.dgvList);
             this.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DSPhieu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Sách Phiếu";
             this.Load += new System.EventHandler(this.DSPhieu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvList)).EndInit();

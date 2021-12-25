@@ -7,7 +7,7 @@ namespace BTL.DAO
         public SqlConnection Connect()
         {
             return new SqlConnection(
-                @"Data Source=DESKTOP-NIULDEP\SQLEXPRESS;Initial Catalog=btl_pttkht;User ID=sa;Password=password"
+                @"Data Source=DESKTOP-NIULDEP\SQLEXPRESS;Initial Catalog=QLNhaHang;User ID=sa;Password=password"
             );
         }
     }

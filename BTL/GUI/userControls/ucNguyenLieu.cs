@@ -222,6 +222,19 @@ namespace BTL
         private void dgvProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnDelete.Enabled = true;
+            if (action == EDIT)
+            {
+                int index = e.RowIndex;
+                if (index != -1)
+                {
+                    NguyenLieu nl = ds_nl.Find(item => "" + item.ma == dgvProduct.Rows[index].Cells[1].Value.ToString());
+                    if (nl != null)
+                    {
+                        setData(nl);
+                        cbId.Text = dgvProduct.Rows[index].Cells[1].Value.ToString();
+                    }
+                }
+            }
         }
 
         private void txtKeyword_TextChanged(object sender, EventArgs e)

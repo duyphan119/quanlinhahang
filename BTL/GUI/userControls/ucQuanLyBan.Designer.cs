@@ -37,14 +37,14 @@ namespace BTL
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.cbId = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.cbSearch = new Guna.UI2.WinForms.Guna2ComboBox();
             this.btnSave = new Guna.UI2.WinForms.Guna2Button();
             this.btnDelete = new Guna.UI2.WinForms.Guna2Button();
             this.btnEdit = new Guna.UI2.WinForms.Guna2Button();
             this.btnAdd = new Guna.UI2.WinForms.Guna2Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbSearch = new Guna.UI2.WinForms.Guna2ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTable)).BeginInit();
             this.guna2GroupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -165,41 +165,6 @@ namespace BTL
             this.cbId.SelectedIndexChanged += new System.EventHandler(this.cbId_SelectedIndexChanged);
             this.cbId.TextChanged += new System.EventHandler(this.cbId_TextChanged);
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Location = new System.Drawing.Point(684, 177);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 36);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Lọc Theo Trạng Thái";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // cbSearch
-            // 
-            this.cbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cbSearch.BackColor = System.Drawing.Color.Transparent;
-            this.cbSearch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbSearch.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cbSearch.FocusedState.Parent = this.cbSearch;
-            this.cbSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cbSearch.HoverState.Parent = this.cbSearch;
-            this.cbSearch.ItemHeight = 30;
-            this.cbSearch.Items.AddRange(new object[] {
-            "Trống",
-            "Có Khách",
-            "Tất Cả"});
-            this.cbSearch.ItemsAppearance.Parent = this.cbSearch;
-            this.cbSearch.Location = new System.Drawing.Point(854, 177);
-            this.cbSearch.Name = "cbSearch";
-            this.cbSearch.ShadowDecoration.Parent = this.cbSearch;
-            this.cbSearch.Size = new System.Drawing.Size(168, 36);
-            this.cbSearch.TabIndex = 21;
-            this.cbSearch.SelectedIndexChanged += new System.EventHandler(this.cbSearch_SelectedIndexChanged);
-            // 
             // btnSave
             // 
             this.btnSave.Animated = true;
@@ -237,7 +202,6 @@ namespace BTL
             this.btnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.btnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnDelete.DisabledState.Parent = this.btnDelete;
-            this.btnDelete.Enabled = false;
             this.btnDelete.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(122)))), ((int)(((byte)(122)))));
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
@@ -319,6 +283,41 @@ namespace BTL
             this.label3.TabIndex = 7;
             this.label3.Text = "Số Bàn";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Location = new System.Drawing.Point(684, 177);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(164, 36);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "Lọc Theo Trạng Thái";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // cbSearch
+            // 
+            this.cbSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.cbSearch.BackColor = System.Drawing.Color.Transparent;
+            this.cbSearch.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSearch.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSearch.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbSearch.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cbSearch.FocusedState.Parent = this.cbSearch;
+            this.cbSearch.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
+            this.cbSearch.HoverState.Parent = this.cbSearch;
+            this.cbSearch.ItemHeight = 30;
+            this.cbSearch.Items.AddRange(new object[] {
+            "Trống",
+            "Có Khách",
+            "Tất Cả"});
+            this.cbSearch.ItemsAppearance.Parent = this.cbSearch;
+            this.cbSearch.Location = new System.Drawing.Point(854, 177);
+            this.cbSearch.Name = "cbSearch";
+            this.cbSearch.ShadowDecoration.Parent = this.cbSearch;
+            this.cbSearch.Size = new System.Drawing.Size(168, 36);
+            this.cbSearch.TabIndex = 21;
+            this.cbSearch.SelectedIndexChanged += new System.EventHandler(this.cbSearch_SelectedIndexChanged);
             // 
             // ucQuanLyBan
             // 

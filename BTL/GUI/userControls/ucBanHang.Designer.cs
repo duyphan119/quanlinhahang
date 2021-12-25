@@ -43,7 +43,6 @@ namespace BTL
             this.lbPriceSum = new System.Windows.Forms.Label();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.fpnlTable = new System.Windows.Forms.FlowLayoutPanel();
-            this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.lblUnit = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -56,6 +55,8 @@ namespace BTL
             this.cbNewTable = new System.Windows.Forms.ComboBox();
             this.btnChangeTable = new Guna.UI2.WinForms.Guna2Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.btnCancel = new Guna.UI2.WinForms.Guna2Button();
+            this.btnPrint = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFood)).BeginInit();
             this.guna2GroupBox2.SuspendLayout();
@@ -75,10 +76,10 @@ namespace BTL
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox1.Location = new System.Drawing.Point(379, 212);
+            this.guna2GroupBox1.Location = new System.Drawing.Point(379, 198);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(645, 310);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(645, 324);
             this.guna2GroupBox1.TabIndex = 38;
             this.guna2GroupBox1.Text = "Thông Tin Bàn";
             // 
@@ -99,7 +100,7 @@ namespace BTL
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.HoverState.Parent = this.btnDelete;
-            this.btnDelete.Location = new System.Drawing.Point(9, 272);
+            this.btnDelete.Location = new System.Drawing.Point(9, 286);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
             this.btnDelete.Size = new System.Drawing.Size(152, 35);
@@ -160,7 +161,7 @@ namespace BTL
             this.dgvFood.RowTemplate.Height = 24;
             this.dgvFood.RowTemplate.ReadOnly = true;
             this.dgvFood.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvFood.Size = new System.Drawing.Size(622, 182);
+            this.dgvFood.Size = new System.Drawing.Size(622, 196);
             this.dgvFood.TabIndex = 42;
             this.dgvFood.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFood_CellClick);
             // 
@@ -221,7 +222,7 @@ namespace BTL
             // 
             this.lbPriceSum.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.lbPriceSum.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPriceSum.Location = new System.Drawing.Point(312, 272);
+            this.lbPriceSum.Location = new System.Drawing.Point(312, 286);
             this.lbPriceSum.Name = "lbPriceSum";
             this.lbPriceSum.Size = new System.Drawing.Size(319, 36);
             this.lbPriceSum.TabIndex = 39;
@@ -254,31 +255,6 @@ namespace BTL
             this.fpnlTable.Name = "fpnlTable";
             this.fpnlTable.Size = new System.Drawing.Size(324, 528);
             this.fpnlTable.TabIndex = 35;
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnPrint.Animated = true;
-            this.btnPrint.BorderRadius = 3;
-            this.btnPrint.CheckedState.Parent = this.btnPrint;
-            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrint.CustomImages.Parent = this.btnPrint;
-            this.btnPrint.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnPrint.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnPrint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnPrint.DisabledState.Parent = this.btnPrint;
-            this.btnPrint.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(165)))), ((int)(((byte)(255)))));
-            this.btnPrint.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPrint.ForeColor = System.Drawing.Color.White;
-            this.btnPrint.HoverState.Parent = this.btnPrint;
-            this.btnPrint.Location = new System.Drawing.Point(836, 527);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.ShadowDecoration.Parent = this.btnPrint;
-            this.btnPrint.Size = new System.Drawing.Size(187, 63);
-            this.btnPrint.TabIndex = 40;
-            this.btnPrint.Text = "In Hoá Đơn";
-            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
             // 
             // guna2GroupBox3
             // 
@@ -429,7 +405,7 @@ namespace BTL
             this.btnChangeTable.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.btnChangeTable.DisabledState.Parent = this.btnChangeTable;
             this.btnChangeTable.Enabled = false;
-            this.btnChangeTable.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(165)))), ((int)(((byte)(255)))));
+            this.btnChangeTable.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(199)))), ((int)(((byte)(200)))));
             this.btnChangeTable.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangeTable.ForeColor = System.Drawing.Color.White;
             this.btnChangeTable.HoverState.Parent = this.btnChangeTable;
@@ -452,10 +428,73 @@ namespace BTL
             this.label4.Text = "Bàn Mới";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancel.Animated = true;
+            this.btnCancel.BorderColor = System.Drawing.Color.Red;
+            this.btnCancel.BorderRadius = 3;
+            this.btnCancel.BorderThickness = 2;
+            this.btnCancel.CheckedState.Parent = this.btnCancel;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.CustomImages.Parent = this.btnCancel;
+            this.btnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnCancel.DisabledState.Parent = this.btnCancel;
+            this.btnCancel.FillColor = System.Drawing.Color.White;
+            this.btnCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancel.ForeColor = System.Drawing.Color.Red;
+            this.btnCancel.HoverState.Parent = this.btnCancel;
+            this.btnCancel.Image = global::BTL.Properties.Resources.prohibition;
+            this.btnCancel.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCancel.ImageSize = new System.Drawing.Size(36, 36);
+            this.btnCancel.Location = new System.Drawing.Point(676, 528);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.ShadowDecoration.Parent = this.btnCancel;
+            this.btnCancel.Size = new System.Drawing.Size(166, 63);
+            this.btnCancel.TabIndex = 51;
+            this.btnCancel.Text = "Huỷ đặt bàn";
+            this.btnCancel.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrint.Animated = true;
+            this.btnPrint.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(165)))), ((int)(((byte)(255)))));
+            this.btnPrint.BorderRadius = 3;
+            this.btnPrint.BorderThickness = 2;
+            this.btnPrint.CheckedState.Parent = this.btnPrint;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrint.CustomImages.Parent = this.btnPrint;
+            this.btnPrint.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrint.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnPrint.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnPrint.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnPrint.DisabledState.Parent = this.btnPrint;
+            this.btnPrint.FillColor = System.Drawing.Color.White;
+            this.btnPrint.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPrint.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(165)))), ((int)(((byte)(255)))));
+            this.btnPrint.HoverState.Parent = this.btnPrint;
+            this.btnPrint.Image = global::BTL.Properties.Resources.printer;
+            this.btnPrint.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPrint.ImageSize = new System.Drawing.Size(36, 36);
+            this.btnPrint.Location = new System.Drawing.Point(848, 527);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.ShadowDecoration.Parent = this.btnPrint;
+            this.btnPrint.Size = new System.Drawing.Size(176, 63);
+            this.btnPrint.TabIndex = 40;
+            this.btnPrint.Text = "Xuất Hoá Đơn";
+            this.btnPrint.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
             // ucBanHang
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnChangeTable);
             this.Controls.Add(this.cbNewTable);
@@ -502,5 +541,6 @@ namespace BTL
         private System.Windows.Forms.ComboBox cbNewTable;
         private Guna.UI2.WinForms.Guna2Button btnChangeTable;
         private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2Button btnCancel;
     }
 }

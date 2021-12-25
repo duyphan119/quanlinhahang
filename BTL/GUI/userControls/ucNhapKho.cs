@@ -127,7 +127,7 @@ namespace BTL
             for (int i = dgvProduct.SelectedRows.Count - 1; i >= 0; i--)
             {
                 int index = dgvProduct.SelectedRows[i].Index;
-                dao_ctp.deleteOne(type, phieu.sophieu, Convert.ToInt32(dgvProduct.Rows[index].Cells[0].Value));
+                dao_ctp.deleteOne(type, phieu.sophieu, dgvProduct.Rows[index].Cells[0].Value.ToString());
                 dgvProduct.Rows.RemoveAt(index);
                 phieu.list.RemoveAt(index);
                 if(phieu.list.Count == 0)

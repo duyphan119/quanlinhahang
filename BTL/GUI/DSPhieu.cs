@@ -1,19 +1,11 @@
 ﻿using BTL.Model;
-using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BTL
 {
-    public partial class DSPhieu : MetroForm
+    public partial class DSPhieu : Form
     {
         private List<Phieu> ds_ph = new List<Phieu>();
         private ucNhapKho nk;

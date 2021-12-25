@@ -168,9 +168,6 @@ D:\Documents\DoAnPTTKHT\BTL\bin\Debug\CircularProgressBar.dll
 D:\Documents\DoAnPTTKHT\BTL\bin\Debug\EntityFramework.dll
 D:\Documents\DoAnPTTKHT\BTL\bin\Debug\EntityFramework.SqlServer.dll
 D:\Documents\DoAnPTTKHT\BTL\bin\Debug\Guna.UI2.dll
-D:\Documents\DoAnPTTKHT\BTL\bin\Debug\MetroFramework.Design.dll
-D:\Documents\DoAnPTTKHT\BTL\bin\Debug\MetroFramework.dll
-D:\Documents\DoAnPTTKHT\BTL\bin\Debug\MetroFramework.Fonts.dll
 D:\Documents\DoAnPTTKHT\BTL\bin\Debug\Microsoft.ReportViewer.Design.dll
 D:\Documents\DoAnPTTKHT\BTL\bin\Debug\Microsoft.ReportViewer.WinForms.dll
 D:\Documents\DoAnPTTKHT\BTL\bin\Debug\Microsoft.SqlServer.Types.dll

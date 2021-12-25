@@ -177,6 +177,19 @@ namespace BTL
         private void dgvGroup_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnDelete.Enabled = true;
+            if (action == EDIT)
+            {
+                int index = e.RowIndex;
+                if(index != -1)
+                {
+                    NhomMon nhom = ds_nhom.Find(item => "" + item.ma == dgvGroup.Rows[index].Cells[0].Value.ToString());
+                    if (nhom != null)
+                    {
+                        setData(nhom);
+                        cbId.Text = dgvGroup.Rows[index].Cells[0].Value.ToString();
+                    }
+                }
+            }
         }
 
         private void cbId_SelectedIndexChanged_1(object sender, EventArgs e)

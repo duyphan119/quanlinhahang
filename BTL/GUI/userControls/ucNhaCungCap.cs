@@ -222,6 +222,19 @@ namespace BTL
         private void dgvSupplier_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             btnDelete.Enabled = true;
+            if (action == EDIT)
+            {
+                int index = e.RowIndex;
+                if (index != -1)
+                {
+                    NhaCungCap ncc = ds_ncc.Find(item => "" + item.ma == dgvSupplier.Rows[index].Cells[0].Value.ToString());
+                    if (ncc != null)
+                    {
+                        setData(ncc);
+                        cbId.Text = dgvSupplier.Rows[index].Cells[0].Value.ToString();
+                    }
+                }
+            }
         }
 
         private void txtKeyword_TextChanged(object sender, EventArgs e)
