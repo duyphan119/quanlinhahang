@@ -1,86 +1,6 @@
-﻿USE [master]
+USE [QLNhaHang]
 GO
-/****** Object:  Database [btl_pttkht]    Script Date: 12/17/2021 4:26:54 PM ******/
-CREATE DATABASE [btl_pttkht]
- CONTAINMENT = NONE
- ON  PRIMARY 
-( NAME = N'btl_pttkht', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\btl_pttkht.mdf' , SIZE = 8192KB , MAXSIZE = UNLIMITED, FILEGROWTH = 65536KB )
- LOG ON 
-( NAME = N'btl_pttkht_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL15.SQLEXPRESS\MSSQL\DATA\btl_pttkht_log.ldf' , SIZE = 8192KB , MAXSIZE = 2048GB , FILEGROWTH = 65536KB )
- WITH CATALOG_COLLATION = DATABASE_DEFAULT
-GO
-ALTER DATABASE [btl_pttkht] SET COMPATIBILITY_LEVEL = 150
-GO
-IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
-begin
-EXEC [btl_pttkht].[dbo].[sp_fulltext_database] @action = 'enable'
-end
-GO
-ALTER DATABASE [btl_pttkht] SET ANSI_NULL_DEFAULT OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET ANSI_NULLS OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET ANSI_PADDING OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET ANSI_WARNINGS OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET ARITHABORT OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET AUTO_CLOSE ON 
-GO
-ALTER DATABASE [btl_pttkht] SET AUTO_SHRINK OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET AUTO_UPDATE_STATISTICS ON 
-GO
-ALTER DATABASE [btl_pttkht] SET CURSOR_CLOSE_ON_COMMIT OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET CURSOR_DEFAULT  GLOBAL 
-GO
-ALTER DATABASE [btl_pttkht] SET CONCAT_NULL_YIELDS_NULL OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET NUMERIC_ROUNDABORT OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET QUOTED_IDENTIFIER OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET RECURSIVE_TRIGGERS OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET  ENABLE_BROKER 
-GO
-ALTER DATABASE [btl_pttkht] SET AUTO_UPDATE_STATISTICS_ASYNC OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET DATE_CORRELATION_OPTIMIZATION OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET TRUSTWORTHY OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET ALLOW_SNAPSHOT_ISOLATION OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET PARAMETERIZATION SIMPLE 
-GO
-ALTER DATABASE [btl_pttkht] SET READ_COMMITTED_SNAPSHOT OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET HONOR_BROKER_PRIORITY OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET RECOVERY SIMPLE 
-GO
-ALTER DATABASE [btl_pttkht] SET  MULTI_USER 
-GO
-ALTER DATABASE [btl_pttkht] SET PAGE_VERIFY CHECKSUM  
-GO
-ALTER DATABASE [btl_pttkht] SET DB_CHAINING OFF 
-GO
-ALTER DATABASE [btl_pttkht] SET FILESTREAM( NON_TRANSACTED_ACCESS = OFF ) 
-GO
-ALTER DATABASE [btl_pttkht] SET TARGET_RECOVERY_TIME = 60 SECONDS 
-GO
-ALTER DATABASE [btl_pttkht] SET DELAYED_DURABILITY = DISABLED 
-GO
-ALTER DATABASE [btl_pttkht] SET ACCELERATED_DATABASE_RECOVERY = OFF  
-GO
-ALTER DATABASE [btl_pttkht] SET QUERY_STORE = OFF
-GO
-USE [btl_pttkht]
-GO
-/****** Object:  Table [dbo].[ban]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  Table [dbo].[ban]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -94,7 +14,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[chitiethoadon]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  Table [dbo].[chitiethoadon]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -105,7 +25,7 @@ CREATE TABLE [dbo].[chitiethoadon](
 	[soluong] [int] NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[chitietphieunhap]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  Table [dbo].[chitietphieunhap]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -116,7 +36,7 @@ CREATE TABLE [dbo].[chitietphieunhap](
 	[soluong] [int] NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[chitietphieuxuat]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  Table [dbo].[chitietphieuxuat]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -127,7 +47,7 @@ CREATE TABLE [dbo].[chitietphieuxuat](
 	[soluong] [int] NULL
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[hoadon]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  Table [dbo].[hoadon]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -144,7 +64,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[monan]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  Table [dbo].[monan]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -161,7 +81,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[nguyenlieu]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  Table [dbo].[nguyenlieu]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -178,7 +98,7 @@ CREATE TABLE [dbo].[nguyenlieu](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[nhacungcap]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  Table [dbo].[nhacungcap]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -194,7 +114,7 @@ CREATE TABLE [dbo].[nhacungcap](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[nhanvien]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  Table [dbo].[nhanvien]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -214,7 +134,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[nhommon]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  Table [dbo].[nhommon]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -228,7 +148,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[phieunhap]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  Table [dbo].[phieunhap]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -243,7 +163,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[phieuxuat]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  Table [dbo].[phieuxuat]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -284,7 +204,7 @@ INSERT [dbo].[ban] ([soban], [trangthai]) VALUES (12, 1)
 GO
 INSERT [dbo].[ban] ([soban], [trangthai]) VALUES (13, 1)
 GO
-INSERT [dbo].[ban] ([soban], [trangthai]) VALUES (14, 1)
+INSERT [dbo].[ban] ([soban], [trangthai]) VALUES (14, 0)
 GO
 INSERT [dbo].[ban] ([soban], [trangthai]) VALUES (15, 1)
 GO
@@ -1194,6 +1114,58 @@ INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000075', 
 GO
 INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000075', N'P154', 1)
 GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000080', N'P015', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000080', N'P038', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000080', N'P069', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000080', N'P155', 2)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000080', N'P121', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000080', N'P124', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000081', N'P015', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000082', N'P004', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000083', N'P021', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000084', N'P003', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000084', N'P018', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000084', N'P053', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000084', N'P153', 2)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000085', N'P002', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000085', N'P035', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000085', N'P077', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000086', N'P003', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000086', N'P049', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000086', N'P111', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000086', N'P156', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000087', N'P001', 2)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000087', N'P073', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000087', N'P151', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000087', N'P154', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000087', N'P156', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000087', N'P117', 1)
+GO
 INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000043', N'P128', 1)
 GO
 INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000043', N'P137', 3)
@@ -1384,6 +1356,10 @@ INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000077', 
 GO
 INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000077', N'P154', 1)
 GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000087', N'P037', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000087', N'P038', 1)
+GO
 INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000056', N'P137', 2)
 GO
 INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000056', N'P138', 3)
@@ -1457,6 +1433,14 @@ GO
 INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000064', N'P156', 1)
 GO
 INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000064', N'P154', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000081', N'P035', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000081', N'P061', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000081', N'P119', 1)
+GO
+INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000081', N'P152', 2)
 GO
 INSERT [dbo].[chitiethoadon] ([sohd], [mamon], [soluong]) VALUES (N'HD0000079', N'P021', 2)
 GO
@@ -1733,6 +1717,22 @@ GO
 INSERT [dbo].[hoadon] ([sohd], [giovao], [giora], [manv], [soban]) VALUES (N'HD0000078', CAST(N'2021-12-16T23:11:47.000' AS DateTime), CAST(N'2021-12-16T23:52:27.000' AS DateTime), N'210020', 4)
 GO
 INSERT [dbo].[hoadon] ([sohd], [giovao], [giora], [manv], [soban]) VALUES (N'HD0000079', CAST(N'2021-12-16T23:20:17.000' AS DateTime), CAST(N'2021-12-16T23:58:41.000' AS DateTime), N'210020', 3)
+GO
+INSERT [dbo].[hoadon] ([sohd], [giovao], [giora], [manv], [soban]) VALUES (N'HD0000080', CAST(N'2021-12-18T23:57:56.000' AS DateTime), CAST(N'2021-12-19T00:08:14.000' AS DateTime), N'210001', 2)
+GO
+INSERT [dbo].[hoadon] ([sohd], [giovao], [giora], [manv], [soban]) VALUES (N'HD0000081', CAST(N'2021-12-19T00:04:02.000' AS DateTime), CAST(N'2021-12-19T00:09:07.000' AS DateTime), N'210001', 9)
+GO
+INSERT [dbo].[hoadon] ([sohd], [giovao], [giora], [manv], [soban]) VALUES (N'HD0000082', CAST(N'2021-12-23T14:56:58.000' AS DateTime), CAST(N'2021-12-23T16:29:09.000' AS DateTime), N'210001', 16)
+GO
+INSERT [dbo].[hoadon] ([sohd], [giovao], [giora], [manv], [soban]) VALUES (N'HD0000083', CAST(N'2021-12-23T14:58:42.000' AS DateTime), CAST(N'2021-12-23T16:29:11.000' AS DateTime), N'210001', 3)
+GO
+INSERT [dbo].[hoadon] ([sohd], [giovao], [giora], [manv], [soban]) VALUES (N'HD0000084', CAST(N'2021-12-24T12:04:02.000' AS DateTime), CAST(N'2021-12-24T12:08:38.000' AS DateTime), N'210013', 10)
+GO
+INSERT [dbo].[hoadon] ([sohd], [giovao], [giora], [manv], [soban]) VALUES (N'HD0000085', CAST(N'2021-12-24T12:20:08.000' AS DateTime), CAST(N'2021-12-24T12:20:24.000' AS DateTime), N'210013', 8)
+GO
+INSERT [dbo].[hoadon] ([sohd], [giovao], [giora], [manv], [soban]) VALUES (N'HD0000086', CAST(N'2021-12-24T12:21:42.000' AS DateTime), CAST(N'2021-12-24T12:22:11.000' AS DateTime), N'210013', 9)
+GO
+INSERT [dbo].[hoadon] ([sohd], [giovao], [giora], [manv], [soban]) VALUES (N'HD0000087', CAST(N'2021-12-25T10:51:11.000' AS DateTime), CAST(N'2021-12-25T10:51:11.000' AS DateTime), N'210013', 14)
 GO
 INSERT [dbo].[monan] ([mamon], [tenmon], [giatien], [dvt], [manhom]) VALUES (N'P001', N'Gỏi cá mai', CAST(250000 AS Decimal(18, 0)), N'Dĩa', N'G01')
 GO
@@ -2118,23 +2118,23 @@ INSERT [dbo].[nhacungcap] ([mancc], [tenncc], [diachi], [sdt]) VALUES (N'SUP02',
 GO
 INSERT [dbo].[nhacungcap] ([mancc], [tenncc], [diachi], [sdt]) VALUES (N'SUP03', N'Đại Lý Bia Sài Gòn', N'23, Đường Số 3, Phường Hiệp Bình Chánh, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0903923412')
 GO
-INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210001', N'Phan Khánh Duy', CAST(N'1984-01-01T00:00:00.000' AS DateTime), N'Nam', N'11 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254130', N'Giám Đốc', N'123456')
+INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210001', N'Phan Khánh Duy', CAST(N'1984-01-01T00:00:00.000' AS DateTime), N'Nam', N'11 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254130', N'Quản Lý', N'123456')
 GO
-INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210002', N'Nguyễn Hữu An', CAST(N'1986-02-01T00:00:00.000' AS DateTime), N'Nam', N'21 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254131', N'Phó Giám Đốc', N'123456')
+INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210002', N'Nguyễn Hữu An', CAST(N'1986-02-01T00:00:00.000' AS DateTime), N'Nam', N'21 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254131', N'Bếp Trưởng', N'123456')
 GO
 INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210003', N'Phạm Minh Hiếu', CAST(N'1989-03-11T00:00:00.000' AS DateTime), N'Nam', N'31 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254132', N'Thủ Kho', N'123456')
 GO
 INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210004', N'Trần Mặc Khải', CAST(N'1989-04-21T00:00:00.000' AS DateTime), N'Nam', N'41 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254133', N'Kế Toán Trưởng', N'123456')
 GO
-INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210005', N'Trần Tấn Nhựt', CAST(N'1989-05-05T00:00:00.000' AS DateTime), N'Nam', N'51 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254134', N'Quản Lý', N'123456')
+INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210005', N'Trần Tấn Nhựt', CAST(N'1989-05-05T00:00:00.000' AS DateTime), N'Nam', N'51 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254134', N'Giám Sát Nhà Hàng', N'123456')
 GO
-INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210006', N'Trần Đăng Chương', CAST(N'1989-02-01T00:00:00.000' AS DateTime), N'Nam', N'61 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254135', N'Bếp Trưởng', N'123456')
+INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210006', N'Trần Đăng Chương', CAST(N'1989-02-01T00:00:00.000' AS DateTime), N'Nam', N'61 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254135', N'Nhân Viên Chạy Bàn', N'123456')
 GO
-INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210007', N'Lê Quang Khánh', CAST(N'1999-03-01T00:00:00.000' AS DateTime), N'Nam', N'71 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254136', N'Bếp Phó', N'123456')
+INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210007', N'Lê Quang Khánh', CAST(N'1999-03-01T00:00:00.000' AS DateTime), N'Nam', N'71 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254136', N'Nhân Viên Vệ Sinh', N'123456')
 GO
-INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210008', N'Lê Anh Tú', CAST(N'1999-04-01T00:00:00.000' AS DateTime), N'Nam', N'81 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254137', N'Đầu Bếp', N'123456')
+INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210008', N'Lê Anh Tú', CAST(N'1999-04-01T00:00:00.000' AS DateTime), N'Nam', N'81 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254137', N'Nhân Viên Kho', N'123456')
 GO
-INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210009', N'Nguyễn Anh Tú', CAST(N'1999-01-01T00:00:00.000' AS DateTime), N'Nam', N'91 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254138', N'Đầu Bếp', N'123456')
+INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210009', N'Nguyễn Anh Tú', CAST(N'1999-01-01T00:00:00.000' AS DateTime), N'Nam', N'91 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254138', N'Nhân Viên Phục Vụ', N'123456')
 GO
 INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210010', N'Trần Văn Tùng', CAST(N'1999-11-01T00:00:00.000' AS DateTime), N'Nam', N'101 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254139', N'Nhân Viên Bếp', N'123456')
 GO
@@ -2142,17 +2142,17 @@ INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt
 GO
 INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210012', N'Lê Thị Ngọc', CAST(N'1994-01-06T00:00:00.000' AS DateTime), N'Nữ', N'121 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254141', N'Nhân Viên Kế Toán', N'123456')
 GO
-INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210013', N'Nguyễn Thị Thanh', CAST(N'1995-07-11T00:00:00.000' AS DateTime), N'Nữ', N'131 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254142', N'Lễ Tân', N'123456')
+INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210013', N'Nguyễn Thị Thanh', CAST(N'1995-07-11T00:00:00.000' AS DateTime), N'Nữ', N'131 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254142', N'Thu Ngân', N'123456')
 GO
 INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210014', N'Phạm Tuấn Tú', CAST(N'1998-06-06T00:00:00.000' AS DateTime), N'Nam', N'141 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254143', N'Nhân Viên Kho', N'123456')
 GO
 INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210015', N'Phan Thị Thanh', CAST(N'1997-07-22T00:00:00.000' AS DateTime), N'Nữ', N'151 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254144', N'Nhân Viên Phục Vụ', N'123456')
 GO
-INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210016', N'Trần Văn Toàn', CAST(N'1993-11-06T00:00:00.000' AS DateTime), N'Nam', N'161 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254145', N'Bảo vệ', N'123456')
+INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210016', N'Trần Văn Toàn', CAST(N'1993-11-06T00:00:00.000' AS DateTime), N'Nam', N'161 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254145', N'Bảo Vệ', N'123456')
 GO
 INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210017', N'Nguyễn Khánh Duy', CAST(N'1998-07-02T19:22:00.000' AS DateTime), N'Nam', N'171 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254146', N'Nhân Viên Vệ Sinh', N'123456')
 GO
-INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210018', N'Trần Thanh Thảo', CAST(N'1997-03-20T19:22:00.000' AS DateTime), N'Nữ', N'181 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254147', N'Lễ Tân', N'123456')
+INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210018', N'Trần Thanh Thảo', CAST(N'1997-03-20T19:22:00.000' AS DateTime), N'Nữ', N'181 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254147', N'Thu Ngân', N'123456')
 GO
 INSERT [dbo].[nhanvien] ([manv], [tennv], [ngaysinh], [gioitinh], [diachi], [sdt], [chucvu], [matkhau]) VALUES (N'210019', N'Nguyễn Thu Thảo', CAST(N'1987-07-31T19:22:00.000' AS DateTime), N'Nữ', N'191 Lê Văn Việt, Tăng Nhơn Phú A, TP Thủ Đức, Thành phố Hồ Chí Minh', N'0383254148', N'Nhân Viên Bếp', N'123456')
 GO
@@ -2296,7 +2296,7 @@ ALTER TABLE [dbo].[phieuxuat]  WITH CHECK ADD FOREIGN KEY([manv])
 REFERENCES [dbo].[nhanvien] ([manv])
 ON DELETE CASCADE
 GO
-/****** Object:  StoredProcedure [dbo].[sp_DanhSachMonAnCuaBan]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_DanhSachMonAnCuaBan]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2313,7 +2313,7 @@ create proc [dbo].[sp_DanhSachMonAnCuaBan]
 			where hd.sohd = cthd.sohd and m.mamon = cthd.mamon and hd.giora = hd.giovao and hd.soban = @soban --Ngày là null : chưa thanh toán
 		end
 GO
-/****** Object:  StoredProcedure [dbo].[sp_datBan]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_datBan]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2329,7 +2329,7 @@ as
 		values (@sohd, @giodat,@giodat,@soban, @manv); 
 	end
 GO
-/****** Object:  StoredProcedure [dbo].[sp_DoanhThuCacNamGanDay]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_DoanhThuCacNamGanDay]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2366,7 +2366,7 @@ as
 		select * from @CacNamGanDay
 	end
 GO
-/****** Object:  StoredProcedure [dbo].[sp_DoanhThuCacNgayTrongThang]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_DoanhThuCacNgayTrongThang]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2381,7 +2381,7 @@ as
 		group by day(hd.giora)
 	end
 GO
-/****** Object:  StoredProcedure [dbo].[sp_DoanhThuCacNgayTrongTuan]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_DoanhThuCacNgayTrongTuan]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2486,7 +2486,7 @@ begin
 	select * from @CacNgayTrongTuan order by thu;
 end
 GO
-/****** Object:  StoredProcedure [dbo].[sp_DoanhThuCacQuyTrongNam]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_DoanhThuCacQuyTrongNam]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2523,7 +2523,7 @@ as
 		select * from @CacQuyTrongNam
 	end
 GO
-/****** Object:  StoredProcedure [dbo].[sp_DoanhThuCacThangTrongNam]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_DoanhThuCacThangTrongNam]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2560,7 +2560,7 @@ as
 		select * from @CacThangTrongNam
 	end
 GO
-/****** Object:  StoredProcedure [dbo].[sp_DoanhThuTuNgayDenNgay]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_DoanhThuTuNgayDenNgay]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2579,7 +2579,7 @@ as
 		select @doanhthu
 	end
 GO
-/****** Object:  StoredProcedure [dbo].[sp_ThanhToan]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_ThanhToan]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2598,7 +2598,7 @@ as
 		update ban set trangthai = 1 where soban = @soban;
 	end
 GO
-/****** Object:  StoredProcedure [dbo].[sp_ThongKeSoLuongMonAnBanDuocTuNgayDenNgay]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_ThongKeSoLuongMonAnBanDuocTuNgayDenNgay]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2619,7 +2619,7 @@ create proc [dbo].[sp_ThongKeSoLuongMonAnBanDuocTuNgayDenNgay]
 			order by x.soluong desc
 		end
 GO
-/****** Object:  StoredProcedure [dbo].[sp_TinhTienCuaHoaDon]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_TinhTienCuaHoaDon]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2638,7 +2638,7 @@ as
 		select @tongtien
 	end
 GO
-/****** Object:  StoredProcedure [dbo].[sp_TonKhoCuaNguyenLieu]    Script Date: 12/17/2021 4:26:55 PM ******/
+/****** Object:  StoredProcedure [dbo].[sp_TonKhoCuaNguyenLieu]    Script Date: 12/25/2021 10:59:10 AM ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -2673,8 +2673,4 @@ as
 			end
 		select @tonkho
 	end
-GO
-USE [master]
-GO
-ALTER DATABASE [btl_pttkht] SET  READ_WRITE 
 GO
